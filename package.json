@@ -1,0 +1,22 @@
+{
+  "name": "<CHANGE_ME:THEME_NAME_ASSETS>",
+  "version": "1.0.0",
+  "description": "<CHANGE_ME:THEME_DESCRIPTION_ASSETS>",
+  "main": "index.js",
+  "scripts": {
+    "generate:font": "node ci/font-generation/index.js",
+    "format:js": "prettier ci/**/*.{js,json} *.md --write"
+  },
+  "repository": "<CHANGE_ME:REPOSITORY_URL>",
+  "author": "<CHANGE_ME:AUTHOR_NAME>",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "<CHANGE_ME:ISSUE_URL>"
+  },
+  "homepage": "<CHANGE_ME:HOMEPAGE/README_URL>",
+  "devDependencies": {
+    "fontello-cli": "^0.6.2",
+    "glob": "^8.0.1",
+    "prettier": "^2.6.2"
+  }
+}

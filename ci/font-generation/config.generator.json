@@ -1,0 +1,22 @@
+{
+  "configFile": "./ci/font-generation/config.json",
+  "dumpDirectory": "./dump",
+  "fontsDirectory": "./assets/font",
+  "svgDirectory": "./icons",
+  "generatorDefaults": {
+    "name": "<CHANGE_ME:THEME_NAME>-icon-font",
+    "cssPrefixText": "icon-",
+    "cssUseSuffix": false,
+    "hinting": true,
+    "unitsPerEm": 1000,
+    "ascent": 850,
+    "glyphs": {
+      "startingIdCode": 1,
+      "startingUnicodeCode": 59392,
+      "src": "custom_icons",
+      "selected": true,
+      "width": 1000,
+      "widthFile": 744
+    }
+  }
+}

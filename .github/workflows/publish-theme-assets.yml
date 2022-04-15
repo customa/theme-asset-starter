@@ -1,0 +1,36 @@
+name: Publish Theme Assets
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install and Build 🛎🔧
+        uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '17'
+          check-latest: true
+      - run: yarn install --frozen-lockfile
+      - run: yarn run generate:font
+      - run: mkdir docs
+      - run: cp dump/<CHANGE_ME:THEME_NAME>-icon-font-codes.css docs/<CHANGE_ME:THEME_NAME>-icon-font-codes.css
+      - name: Deploy Logos 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.8
+        with:
+          branch: pages # The branch the action should deploy to.
+          folder: logos # The folder the action should deploy.
+          target-folder: logos
+      - name: Deploy Documentation 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.8
+        with:
+          branch: pages # The branch the action should deploy to.
+          folder: docs # The folder the action should deploy.
+          target-folder: docs
+      - name: Deploy Assets 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.8
+        with:
+          branch: pages # The branch the action should deploy to.
+          folder: assets # The folder the action should deploy.
+          target-folder: assets
